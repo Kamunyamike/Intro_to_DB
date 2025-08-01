@@ -27,7 +27,7 @@ CREATE TABLE Customers (
 );
 
 -- CREATE TABLE: ORDERS
-CREATE TABLE ORDERS (
+CREATE TABLE Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE,
