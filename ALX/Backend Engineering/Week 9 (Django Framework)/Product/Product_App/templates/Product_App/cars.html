@@ -1,0 +1,22 @@
+<h1>Cars Available</h1>
+<form action="{% url 'add_car' %}" method="post">
+    {% csrf_token %}
+    <label for="name">Car Name:</label><br>
+    <input type="text" name="name" required><br>
+
+    <label for="price">Price:</label><br>
+    <input type="number" name="price" step="0.01" required><br>
+
+    <button type="submit">Add Car</button>
+</form>
+
+<hr>
+
+<h2>Car List</h2>
+<ul>
+    {% for car in cars %}
+        <li>{{ car.name }} - ${{ car.price }}</li>
+    {% empty %}
+        <li>No cars available.</li>
+    {% endfor %}
+</ul>
